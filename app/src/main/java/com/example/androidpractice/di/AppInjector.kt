@@ -26,7 +26,7 @@ object AppInjector {
          * 이 작업을 안해두면 각각의 액티비티에서 AndroidInjection.inject(__)을 작성해줘야한다.
          */
 
-        androidPracticeApp
+        androidPracticeApp // registerActivityLifecycleCallbacks : current activity를 찾을 때 유용하다.
             .registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 handleActivity(activity)

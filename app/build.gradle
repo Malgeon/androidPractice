@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion build_versions.compile_sdk
@@ -50,13 +50,21 @@ dependencies {
     implementation deps.dagger.runtime
     implementation deps.dagger.android
     implementation deps.dagger.android_support
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation deps.legacy
+    implementation deps.lifecycle.livedata_ktx
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.java8
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui
 
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler
 
     testImplementation deps.junit
 
+    androidTestImplementation deps.atsl.core
     androidTestImplementation deps.atsl.ext_junit
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.atsl.rules
     androidTestImplementation deps.espresso.core
 }

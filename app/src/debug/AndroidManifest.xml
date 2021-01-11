@@ -1,0 +1,14 @@
+<!--
+fragment 관리를 위한 함수를 테스트 하기 위한 debug용 SingleFragmentActivity 이다.
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.androidpractice">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".testing.SingleFragmentActivity" />
+    </application>
+
+</manifest>
