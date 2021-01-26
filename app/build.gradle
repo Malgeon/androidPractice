@@ -34,6 +34,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    sourceSets { //추가 test 셋을 구성하기 위한 작업
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -56,8 +61,14 @@ dependencies {
     implementation deps.lifecycle.java8
     implementation deps.navigation.fragment_ktx
     implementation deps.navigation.ui
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    implementation deps.room.runtime
+
+    implementation deps.timber
 
     kapt deps.dagger.android_support_compiler
+    kapt deps.room.compiler
     kapt deps.dagger.compiler
 
     testImplementation deps.junit
